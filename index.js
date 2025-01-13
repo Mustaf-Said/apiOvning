@@ -17,7 +17,7 @@ const mongoose = require("mongoose");
 // Connect to MongoDB
 mongoose
   .connect(
-    "mongodb+srv://86mussai:Raygal99@mongodb.qpqcb.mongodb.net/NodeAPI?retryWrites=true&w=majority&appName=MongoDB"
+    "db-url"
   )
   .then(() => console.log("Connected!"))
   .catch((err) => console.log(err));
@@ -26,15 +26,15 @@ mongoose
 const productSchema = require("./product/product.models.js");
 
 //Create a products
-/* 
+
 app.post("/product", async (_, res) => {
   try {
     const product = await productSchema.create(
       {
-        name: "Saft",
-        quantity: 19,
-        price: 15,
-        Image: "https://www.google.com",
+        name: "orange",
+        quantity: 1,
+        price: 75,
+        Image: "https://www.awo.com",
       },
       {
         name: "Tea",
@@ -47,7 +47,7 @@ app.post("/product", async (_, res) => {
   } catch (err) {
     res.status(404).json(err);
   }
-});*/
+});
 
 //Find all products
 app.get("/product", async (_, res) => {
@@ -105,5 +105,5 @@ app.delete("/product/:id", async (req, res) => {
 
 //Update product by listening
 app.listen(5000, () => {
-  console.log("Server is running on port 5000");
+  console.log("Server is running on port 3000");
 });
